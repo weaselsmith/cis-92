@@ -13,11 +13,15 @@ RUN pip install Django==4.2.7 psutil
 COPY mysite /mysite
 ENV PORT=8000
 WORKDIR /mysite
+
+# environmental variables
 ENV STUDENT_NAME="Noah Panec"
 ENV SITE_NAME="Django Unchained"
 ENV DEBUG=1
+ENV DJANGO_SUPERUSER_USERNAME="admin"
+ENV DJANGO_SUPERUSER_PASSWORD="badpassword"
 
 # run server
-CMD python ./manage.py migrate
-CMD python ./manage.py createsuperuser
+RUN python ./manage.py migrate
+RUN python ./manage.py createsuperuser --noinput --email nmpanec@duck.com
 CMD python ./manage.py runserver 0.0.0.0:$PORT
