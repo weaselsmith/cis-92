@@ -12,6 +12,10 @@ RUN pip install Django==4.2.7 psutil
 # copy mysite directory and call it
 COPY mysite /mysite
 ENV PORT=8000
+ENV STUDENT_NAME="Noah Panec"
+ENV SITE_NAME="Django Unchained"
+ENV DEBUG=1
+ENV DATA_DIR="/data"
 WORKDIR /mysite
 
 # run server
