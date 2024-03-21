@@ -18,10 +18,12 @@ WORKDIR /mysite
 ENV STUDENT_NAME="Noah Panec"
 ENV SITE_NAME="Django Unchained"
 ENV DEBUG=1
+ENV DATA_DIR="/data"
 ENV DJANGO_SUPERUSER_USERNAME="admin"
 ENV DJANGO_SUPERUSER_PASSWORD="badpassword"
 
 # run server
+RUN mkdir $DATA_DIR
 RUN python ./manage.py migrate
 RUN python ./manage.py createsuperuser --noinput --email nmpanec@duck.com
 CMD python ./manage.py runserver 0.0.0.0:$PORT
