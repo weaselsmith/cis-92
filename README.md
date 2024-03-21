@@ -1,7 +1,9 @@
 # My CIS-92 Project 
 
-This repository has the starter code for CIS-92.
+Note for Milestone 6:
 
-This is a test of the pull and push system
+The django migration and superuser are automated in
+the dockerfile, so the docker exec commands are unnecessary
+for testing.  Thank you for testing my code :) 
 
 Author: Noah Panec
