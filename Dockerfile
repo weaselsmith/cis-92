@@ -18,6 +18,7 @@ WORKDIR /mysite
 ENV STUDENT_NAME="Noah Panec"
 ENV SITE_NAME="Django Unchained"
 ENV DEBUG=1
+ENV SECRET_KEY="chilled eggplant martini"
 ENV DATA_DIR="/data"
 ENV DJANGO_SUPERUSER_USERNAME="admin"
 ENV DJANGO_SUPERUSER_PASSWORD="badpassword"
