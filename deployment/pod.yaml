@@ -8,5 +8,19 @@ spec:
   containers:
   - name: dokuwiki-container
     image: bitnami/dokuwiki:latest
+    resources:
+      requests:
+        memory: 512Mi
+        cpu: 250m
+        ephemeral-storage: 10Mi
+      limits:
+        memory: 512Mi
+        cpu: 250m
+        ephemeral-storage: 10Mi
+    env:
+    - name: STUDENT_NAME
+      value: "Noah"
+    - name: SITE_NAME
+      value: "*"
     ports:
     - containerPort: 8080
