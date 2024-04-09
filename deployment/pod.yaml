@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: dokuwiki-pod
+  name: django-pod
   labels:
     function: app
 spec:
   containers:
-  - name: dokuwiki-container
-    image: bitnami/dokuwiki:latest
+  - name: django-container
+    image: ghcr.io/weaselsmith/cis92:milestone-6.3
     resources:
       requests:
         memory: 512Mi
@@ -23,4 +23,4 @@ spec:
     - name: SITE_NAME
       value: "*"
     ports:
-    - containerPort: 8080
+    - containerPort: 8000
