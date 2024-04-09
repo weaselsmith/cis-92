@@ -8,12 +8,14 @@ spec:
   containers:
   - name: django-container
     image: ghcr.io/weaselsmith/cis92:milestone-6.3
+    ports:
+    - containerPort: 8000
     resources:
-      requests:
+      limits:
         memory: 512Mi
         cpu: 250m
         ephemeral-storage: 10Mi
-      limits:
+      requests:
         memory: 512Mi
         cpu: 250m
         ephemeral-storage: 10Mi
@@ -22,5 +24,3 @@ spec:
       value: "Noah"
     - name: SITE_NAME
       value: "*"
-    ports:
-    - containerPort: 8000
