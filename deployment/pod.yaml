@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: django-container
-    image: ghcr.io/weaselsmith/cis92:milestone-6.3
+    image: ghcr.io/weaselsmith/cis-92:milestone-6.3
     ports:
     - containerPort: 8000
     resources:
@@ -19,8 +19,8 @@ spec:
         memory: 512Mi
         cpu: 250m
         ephemeral-storage: 10Mi
-    env:
-    - name: STUDENT_NAME
-      value: "Noah"
-    - name: SITE_NAME
-      value: "*"
+    envFrom:
+    - configMapRef:
+        name: mysite-config
+    - secretRef:
+        name: mysite-secret

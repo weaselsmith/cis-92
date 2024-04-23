@@ -8,3 +8,4 @@ data:
     SITE_NAME: "Django Unchained"
     DATA_DIR: "/data"
     DEBUG: "1"
+    
