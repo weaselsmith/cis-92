@@ -28,7 +28,7 @@ kubectl apply -f deployment/pod.yaml
 
 Easy as that, you will have the site up and running!
 
-Database should be initialized by the dockerfile
+Database should be initialized by the Dockerfile
 
 You can find the external ip that is hosted on with `kubectl get service/django-svc`
 
