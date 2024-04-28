@@ -20,10 +20,7 @@ Author: Noah Panec
 execute these commands in repository home to deploy application
 
 ```
-kubectl apply -f deployment/config.yaml
-kubectl apply -f deployment/secret.yaml
-kubectl apply -f deployment/service.yaml
-kubectl apply -f deployment/pod.yaml
+kubectl apply -f deployment/
 ```
 
 Easy as that, you will have the site up and running!
