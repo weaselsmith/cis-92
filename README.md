@@ -27,13 +27,20 @@ Author: Noah Panec
 
 execute these commands in repository home to deploy application
 
+1. set up kubernetes pod and postgres database
 ```
+helm install postgres oci://registry-1.docker.io/bitnamicharts/postgresql --values values-postgres.yaml
+
 kubectl apply -f deployment/
+```
+2. initialize mysite
+```
+kubectl exec --stdin --tty pod/mysite-pod -- /bin/bash
+python manage.py migrate
+python manage.py createsuperuser
 ```
 
 Easy as that, you will have the site up and running!
-
-Database should be initialized by the Dockerfile
 
 You can find the external ip that is hosted on with `kubectl get service/django-svc`
 
@@ -42,8 +49,6 @@ You can find the external ip that is hosted on with `kubectl get service/django-
 here are the commands to delete the application:
 
 ```
-kubectl delete pod/django-pod
-kubectl delete cm/mysite-config
-kubectl delete secret/mysite-secret
-kubectl delete service/django-svc
+kubectl delete pod/django-pod cm/mysite-config secret/mysite-secret service/django-svc
+
 ```
