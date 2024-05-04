@@ -51,4 +51,5 @@ here are the commands to delete the application:
 ```
 kubectl delete pod/django-pod cm/mysite-config secret/mysite-secret service/django-svc
 
+helm uninstall postgresql
 ```
