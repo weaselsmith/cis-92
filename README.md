@@ -15,6 +15,14 @@ Author: Noah Panec
 | PORT | 8000 | The host port that the site runs on |
 | SECRET_KEY | "this-is-a-bad-key" | cryptographic signing key |
 
+## Postgres Values
+
+| Variable Name | Default Value | Description |
+| -- | -- | -- |
+| username | mysiteuser | username for SQL database |
+| password | this-is-a-bad-password | password for initial database user |
+| database | mysite | name of database |
+
 ## Deployment
 
 execute these commands in repository home to deploy application
