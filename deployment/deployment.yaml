@@ -1,39 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: mysite-deployment
   labels:
-    app: nginx
+    function: app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      function: app
   template:
     metadata:
       name: mysite-pod
       labels:
         function: app
     spec:
-      volumes:
-      - name: db
-        persistentVolumeClaim:
-            claimName: mysite-data
       containers:
       - name: django-container
         image: ghcr.io/weaselsmith/cis-92:milestone-6.3
         ports:
         - containerPort: 8000
         livenessProbe:
-        httpGet:
-          path: /
-          port: 8000
-          httpHeaders:
-          - name: host
-            value: localhost
-        volumeMounts:
-        - name: db
-          mountPath: /data
+          httpGet:
+            path: /
+            port: 8000
+            httpHeaders:
+            - name: host
+              value: localhost
         resources:
           limits:
             memory: 512Mi
