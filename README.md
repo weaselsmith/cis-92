@@ -49,7 +49,7 @@ You can find the external ip that is hosted on with `kubectl get service/django-
 here are the commands to delete the application:
 
 ```
-kubectl delete pod/django-pod cm/mysite-config secret/mysite-secret service/django-svc
+kubectl delete deployment.apps/mysite-deployment cm/mysite-config secret/mysite-secret service/django-svc
 
 helm uninstall postgresql
 ```
