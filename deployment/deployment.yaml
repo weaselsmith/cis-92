@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: django-container
-        image: ghcr.io/weaselsmith/cis-92:milestone-6.3
+        image: ghcr.io/weaselsmith/cis-92:milestone-13.0.1
         ports:
         - containerPort: 8000
         livenessProbe:
